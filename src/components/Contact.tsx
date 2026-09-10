@@ -127,8 +127,21 @@ const Contact = () => {
 
         </div>
 
-        {/* Botão principal */}
+        {/* Horário de atendimento */}
         <div className="text-center mt-12">
+          <p className="text-sm font-medium tracking-[0.15em] uppercase text-primary mb-3">
+            Horário de atendimento
+          </p>
+
+          <p className="text-muted-foreground leading-relaxed">
+            Terça a sexta-feira
+            <br />
+            Sábado somente com horário marcado
+          </p>
+        </div>
+
+        {/* Botão principal */}
+        <div className="text-center mt-10">
 
           <a
             href="https://wa.me/5547991375234?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Espa%C3%A7o%20de%20Beleza%20Berenice%20Lopes."
