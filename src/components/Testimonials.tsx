@@ -1,53 +1,82 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Heart, Star, Sparkles } from "lucide-react";
 
-const testimonials = [
+const highlights = [
   {
-    name: "Ana Paula Silva",
-    text: "Simplesmente maravilhoso! A equipe é super atenciosa e o resultado sempre supera minhas expectativas. Já sou cliente há 3 anos e não troco por nada!",
-    rating: 5,
+    icon: Heart,
+    title: "Atendimento personalizado",
+    text: "Cada cliente é atendida com carinho, atenção e cuidado em todos os detalhes.",
   },
   {
-    name: "Mariana Costa",
-    text: "O melhor salão da região! Ambiente acolhedor, profissionais qualificados e preços justos. Recomendo de olhos fechados!",
-    rating: 5,
+    icon: Star,
+    title: "Experiência e dedicação",
+    text: "Anos de experiência unidos à paixão por realçar a beleza de cada cliente.",
   },
   {
-    name: "Juliana Santos",
-    text: "Fiz meu cabelo para o casamento e ficou perfeito! A maquiagem também estava impecável. Recebi muitos elogios. Muito obrigada!",
-    rating: 5,
+    icon: Sparkles,
+    title: "Momentos especiais",
+    text: "Preparando você para se sentir ainda mais bonita em todos os momentos.",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-20 gradient-hero">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            O que nossas clientes dizem
+    <section className="py-20 md:py-28 bg-background">
+      <div className="container mx-auto px-6">
+
+        {/* Título */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-10 h-px bg-primary" />
+
+            <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary">
+              Nosso compromisso
+            </span>
+
+            <div className="w-10 h-px bg-primary" />
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-serif font-medium mb-5">
+            Beleza que começa no{" "}
+            <span className="italic text-primary">cuidado</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Depoimentos reais de quem confia em nosso trabalho
+
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Mais do que cuidar da sua beleza, queremos proporcionar
+            uma experiência especial em cada visita.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-border shadow-soft">
-              <CardContent className="p-6 space-y-4">
-                <div className="flex gap-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {highlights.map((item, index) => (
+            <Card
+              key={index}
+              className="border-border/60 bg-card hover:shadow-elegant transition-all duration-300"
+            >
+              <CardContent className="p-8 text-center">
+
+                {/* Ícone */}
+                <div className="w-14 h-14 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <item.icon className="w-7 h-7 text-primary" />
                 </div>
-                <p className="text-foreground leading-relaxed italic">
-                  "{testimonial.text}"
+
+                {/* Título */}
+                <h3 className="text-xl font-serif font-medium mb-3">
+                  {item.title}
+                </h3>
+
+                {/* Texto */}
+                <p className="text-muted-foreground leading-relaxed">
+                  {item.text}
                 </p>
-                <div className="font-semibold text-primary">{testimonial.name}</div>
+
               </CardContent>
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   );

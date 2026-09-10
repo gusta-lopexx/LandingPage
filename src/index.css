@@ -2,69 +2,116 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* =========================================================
+   IDENTIDADE VISUAL
+   Espaço de Beleza Berenice Lopes
+   Paleta: rosé, nude, creme e marrom
+   ========================================================= */
 
 @layer base {
   :root {
-    --background: 30 40% 98%;
-    --foreground: 25 25% 15%;
+    /* Fundo principal */
+    --background: 30 45% 98%;
+    --foreground: 25 28% 18%;
 
+    /* Cards */
     --card: 0 0% 100%;
-    --card-foreground: 25 25% 15%;
+    --card-foreground: 25 28% 18%;
 
+    /* Popovers */
     --popover: 0 0% 100%;
-    --popover-foreground: 25 25% 15%;
+    --popover-foreground: 25 28% 18%;
 
-    --primary: 340 70% 65%;
+    /* Cor principal - Rosé */
+    --primary: 345 48% 58%;
     --primary-foreground: 0 0% 100%;
-    
-    --primary-glow: 340 80% 75%;
 
-    --secondary: 30 40% 92%;
-    --secondary-foreground: 25 25% 15%;
+    /* Brilho do rosé */
+    --primary-glow: 345 55% 76%;
 
-    --muted: 30 30% 94%;
-    --muted-foreground: 25 15% 45%;
+    /* Tons secundários */
+    --secondary: 30 38% 93%;
+    --secondary-foreground: 25 28% 18%;
 
-    --accent: 340 70% 65%;
+    /* Tons neutros */
+    --muted: 30 30% 95%;
+    --muted-foreground: 25 14% 48%;
+
+    /* Destaques */
+    --accent: 345 48% 58%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Estados */
+    --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 30% 88%;
-    --input: 30 30% 90%;
-    --ring: 340 70% 65%;
+    /* Bordas e campos */
+    --border: 30 25% 88%;
+    --input: 30 25% 90%;
+    --ring: 345 48% 58%;
 
+    /* Arredondamento */
     --radius: 0.75rem;
-    
-    --gradient-primary: linear-gradient(135deg, hsl(340 70% 65%), hsl(340 80% 75%));
-    --gradient-hero: linear-gradient(180deg, hsl(30 40% 98%), hsl(340 60% 96%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(30 40% 98%));
-    
-    --shadow-soft: 0 4px 20px -4px hsl(340 70% 65% / 0.15);
-    --shadow-elegant: 0 10px 30px -10px hsl(340 70% 65% / 0.25);
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
+    /* =====================================================
+       GRADIENTES
+       ===================================================== */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --gradient-primary:
+      linear-gradient(
+        135deg,
+        hsl(345 48% 58%),
+        hsl(345 55% 76%)
+      );
 
-    --sidebar-primary: 240 5.9% 10%;
+    --gradient-hero:
+      linear-gradient(
+        180deg,
+        hsl(30 45% 98%),
+        hsl(345 35% 96%)
+      );
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --gradient-subtle:
+      linear-gradient(
+        180deg,
+        hsl(0 0% 100%),
+        hsl(30 45% 98%)
+      );
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* =====================================================
+       SOMBRAS
+       ===================================================== */
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --shadow-soft:
+      0 4px 20px -4px hsl(345 48% 58% / 0.14);
 
-    --sidebar-border: 220 13% 91%;
+    --shadow-elegant:
+      0 10px 30px -10px hsl(345 48% 58% / 0.22);
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Transições */
+    --transition-smooth:
+      all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* =====================================================
+       SIDEBAR
+       ===================================================== */
+
+    --sidebar-background: 30 45% 98%;
+    --sidebar-foreground: 25 28% 18%;
+
+    --sidebar-primary: 345 48% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 30 38% 93%;
+    --sidebar-accent-foreground: 25 28% 18%;
+
+    --sidebar-border: 30 25% 88%;
+    --sidebar-ring: 345 48% 58%;
   }
+
+  /* =========================================================
+     DARK MODE
+     ========================================================= */
 
   .dark {
     --background: 25 25% 10%;
@@ -76,10 +123,10 @@ All colors MUST be HSL.
     --popover: 25 25% 12%;
     --popover-foreground: 30 40% 98%;
 
-    --primary: 340 70% 65%;
+    --primary: 345 48% 65%;
     --primary-foreground: 0 0% 100%;
-    
-    --primary-glow: 340 80% 75%;
+
+    --primary-glow: 345 55% 76%;
 
     --secondary: 25 25% 20%;
     --secondary-foreground: 30 40% 98%;
@@ -87,7 +134,7 @@ All colors MUST be HSL.
     --muted: 25 25% 18%;
     --muted-foreground: 30 20% 60%;
 
-    --accent: 340 70% 65%;
+    --accent: 345 48% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
@@ -95,67 +142,89 @@ All colors MUST be HSL.
 
     --border: 25 25% 20%;
     --input: 25 25% 20%;
-    --ring: 340 70% 65%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --ring: 345 48% 65%;
+
+    --sidebar-background: 25 25% 10%;
+    --sidebar-foreground: 30 40% 98%;
+
+    --sidebar-primary: 345 48% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --sidebar-accent: 25 25% 18%;
+    --sidebar-accent-foreground: 30 40% 98%;
+
+    --sidebar-border: 25 25% 20%;
+    --sidebar-ring: 345 48% 65%;
   }
 }
+
+/* =========================================================
+   BASE
+   ========================================================= */
 
 @layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
   }
 }
+
+/* =========================================================
+   UTILITÁRIOS
+   ========================================================= */
 
 @layer utilities {
   .gradient-primary {
     background: var(--gradient-primary);
   }
-  
+
   .gradient-hero {
     background: var(--gradient-hero);
   }
-  
+
   .gradient-subtle {
     background: var(--gradient-subtle);
   }
-  
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
-  
+
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
-  
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }
-  
+
   .animate-fade-in {
     animation: fadeIn 1s ease-in;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
